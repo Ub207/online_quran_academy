@@ -265,7 +265,7 @@ CONTACT INFO (use when relevant):
 
     try:
         response = client.chat.completions.create(
-            model="llama-3.3-70b-versatile",
+            model="openai/gpt-oss-120b",  # Groq retired llama-3.3-70b-versatile (404). Alts: qwen/qwen3.8-27b, allam-2-7b (Arabic-specialized)
             messages=messages,
             temperature=0.3,
             max_tokens=800,
