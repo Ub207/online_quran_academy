@@ -9,7 +9,7 @@
 ![RAG](https://img.shields.io/badge/RAG-retrieval%20augmented-6C4AB6)
 
 **🌐 Live website:** https://ub207.github.io/al-mizan-academy/
-**🤖 Live AI assistant:** https://al-meezan-academy.streamlit.app
+**🤖 Live AI assistant:** https://al-mizan-academy.streamlit.app
 
 ---
 
@@ -20,7 +20,7 @@ One repository ships **two** deliverables that deploy to two different places:
 | Component | File(s) | Deploys to |
 |-----------|---------|-----------|
 | Academy website (single self-contained page) | `index.html` | **GitHub Pages** → `ub207.github.io/al-mizan-academy/` |
-| RAG AI chatbot (Streamlit) | `app.py` + `quran_academy_kb.txt` | **Streamlit Cloud** → `al-meezan-academy.streamlit.app` |
+| RAG AI chatbot (Streamlit) | `app.py` + `quran_academy_kb.txt` | **Streamlit Cloud** → `al-mizan-academy.streamlit.app` |
 
 The website embeds the chatbot in an `<iframe>`, so visitors can chat with the assistant right on the site.
 

@@ -32,13 +32,13 @@ Two deliverables ship from this one repo, deployed to two different places:
 
 | File | What it is | Deploys to |
 |------|-----------|-----------|
-| `app.py` + `quran_academy_kb.txt` | RAG chatbot (Streamlit) | Streamlit Cloud → `al-meezan-academy.streamlit.app` |
+| `app.py` + `quran_academy_kb.txt` | RAG chatbot (Streamlit) | Streamlit Cloud → `al-mizan-academy.streamlit.app` |
 | `index.html` | Academy marketing website (single self-contained file) | GitHub Pages → `ub207.github.io/al-mizan-academy/` |
 
 **RAG pipeline** (`app.py`, all in-process, no vector DB service):
 `quran_academy_kb.txt` → chunk → embed with `all-MiniLM-L6-v2` (sentence-transformers) → FAISS `IndexFlatL2` → retrieve top-3 → inject as context into a Groq chat completion (`llama-3.3-70b-versatile`, temp 0.3, max 800 tokens, last 6 turns of history).
 
-**Website ↔ chatbot coupling:** `index.html` embeds the deployed chatbot in an `<iframe>`. The Streamlit URL is hardcoded in **two** places in `index.html` — the iframe `src` (~line 1176) and the `CHATBOT` JS var (~line 1217). If the Streamlit deployment URL changes, update both. (The README still references an old var name `CHATBOT_URL` and old URL `al-meezan-chatbot.streamlit.app`; the live code uses `CHATBOT` and `al-meezan-academy.streamlit.app` — trust the code.)
+**Website ↔ chatbot coupling:** `index.html` embeds the deployed chatbot in an `<iframe>` pointing at the Streamlit app (`al-mizan-academy.streamlit.app`). That URL appears in several spots in `index.html` — the iframe `src` (~line 1176), the `CHATBOT` JS var (~line 1217), and the "open in new tab" links — so if the Streamlit deployment URL changes, update all of them.
 
 ## Things that will bite you
 
