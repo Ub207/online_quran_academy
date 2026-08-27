@@ -198,7 +198,7 @@ def load_knowledge_base():
     return chunks, index, embedder
 
 
-def retrieve_context(query: str, chunks, index, embedder, top_k: int = 3) -> str:
+def retrieve_context(query: str, chunks, index, embedder, top_k: int = 6) -> str:
     """Retrieve most relevant chunks for a query."""
     query_embedding = embedder.encode([query])
     query_embedding = np.array(query_embedding).astype("float32")
@@ -240,8 +240,16 @@ PERSONALITY:
 KNOWLEDGE BASE CONTEXT:
 {context}
 
+COURSE CATALOGUE (authoritative — this is the COMPLETE list of courses we offer; recognize a course even if the student misspells it or uses a different transliteration):
+- QURAN: Norani Qaida; Nazra Quran; Hifz; Gardaan Course — a memorization-revision course, also spelled "Gardan".
+- TAJWEED: Basic Tajweed; Advanced Tajweed.
+- TRANSLATION & UNDERSTANDING: Complete Translation of the Quran; Fahm-e-Quran; Tafseer-e-Quran; Muallimul Quran.
+- ISLAMIC STUDIES: Islamic Foundation; Islamic Supplications; Seerah & Stories of the Sahabah; Tazkia Course.
+- ARABIC LANGUAGE: Arabic Grammar; Quranic Arabic; Arabic for Kids; Functional Arabic.
+- SPECIALIZATIONS (custom schedule & pricing — direct students to WhatsApp): Saba Qiraat (Seven Styles of Recitation); Ijazah Program.
+
 RULES:
-1. Answer ONLY based on the provided context. If the answer is not in the context, politely say you don't have that specific information and suggest contacting the academy directly.
+1. Use BOTH the Course Catalogue above and the Knowledge Base Context. The catalogue is the definitive list of what we teach — if a student names any course in it (even misspelled, e.g. "gardan" means the "Gardaan Course"), confirm we offer it and describe it warmly. Use the context for pricing and finer details; only if information is genuinely unavailable should you politely say so and suggest contacting the academy directly.
 2. Always be accurate about pricing, course details, and teacher credentials.
 3. For enrollment inquiries, guide them to book a FREE trial class.
 4. Keep responses concise but helpful (2-4 paragraphs max).
