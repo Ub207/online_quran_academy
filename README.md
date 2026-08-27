@@ -5,8 +5,8 @@ Personal website + RAG-powered AI chatbot for Al-Mizan Online Quran Academy, fou
 ## Project Structure
 
 ```
-al-meezan/
-├── index.htm              <- Main academy website
+al-mizan-academy/
+├── index.html              <- Main academy website
 ├── app.py                 <- AI chatbot (Streamlit + Groq RAG)
 ├── quran_academy_kb.txt   <- Chatbot knowledge base
 ├── requirements.txt       <- Python dependencies
@@ -25,9 +25,9 @@ al-meezan/
 
 ## Connect Chatbot to Website
 
-After deploying, open index.htm and find this line near the bottom:
+After deploying, open index.html and find this line near the bottom:
 
-   var CHATBOT_URL = "https://al-meezan-chatbot.streamlit.app";
+   var CHATBOT = "https://al-meezan-academy.streamlit.app?embed=true&embed_options=hide_toolbar,hide_footer";
 
 Replace it with your real Streamlit Cloud URL.
 

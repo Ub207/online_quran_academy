@@ -251,7 +251,7 @@ RULES:
 
 CONTACT INFO (use when relevant):
 - Email: usmanubaidurrehman@gmail.com
-- Website: https://ub207.github.io/al-meezan/
+- Website: https://ub207.github.io/al-mizan-academy/
 - Free trial class available via WhatsApp"""
 
     # Build messages for API
@@ -325,7 +325,7 @@ with st.sidebar:
     st.markdown("---")
     st.markdown("**📞 Contact:**")
     st.markdown("&nbsp;&nbsp;✉️ usmanubaidurrehman@gmail.com")
-    st.markdown("&nbsp;&nbsp;🌐 [Visit Website](https://ub207.github.io/al-meezan/)")
+    st.markdown("&nbsp;&nbsp;🌐 [Visit Website](https://ub207.github.io/al-mizan-academy/)")
     st.markdown("---")
     st.markdown('<p style="background:#c9a84c;color:#fff;padding:0.5rem;border-radius:8px;text-align:center;font-weight:600;font-size:0.9rem;">🎓 FREE Trial Class Available!</p>', unsafe_allow_html=True)
 
